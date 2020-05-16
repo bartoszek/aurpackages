@@ -70,7 +70,9 @@ build() {
     --enable-build-localization \
     --disable-static-system-lib \
     --with-jdk=/usr/lib/jvm/java-8-openjdk/ \
-    FFLAGS="-fallow-argument-mismatch"
+    FFLAGS="-fallow-argument-mismatch" \
+    CXXFLAGS="$CXXFLAGS -DH5_USE_18_API" \
+    CFLAGS="$CFLAGS -DH5_USE_18_API"
 
   make
   make doc
